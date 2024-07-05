@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greta's Portfolio</title>
+    <style>
+:root {
+    --purple: #800080;
+    --black : #000000;
+}
+
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+body {
+    background-color: var(--black);
+    padding-left: 35rem;
+    overflow-x: hidden;
+}
+
+html {
+    font-size: 62%;
+    overflow-x: hidden;
+}
+
+section {
+    min-height: 100vh;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 100%;
+    width: 35rem;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    text-align: center;
+}
+
+header .user .imgdiv img {
+    height: 21rem;
+    width: 17rem;
+    margin-bottom: .4rem;
+    object-fit: cover;
+    border-radius: 50%; /* Make the image round */
+}
+
+
+header .user .name {
+    font-size: 3.5rem;
+    color:white;
+}
+
+header .user .post {
+    font-size: 2rem;
+    color: purple;
+}
+
+header .navbar {
+    width: 100%;
+}
+
+header .navbar ul {
+    list-style: none;
+    padding: 1rem 3rem;
+    
+}
+
+header .navbar ul li a {
+    display: block;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    background: #444;
+    color: #fff;
+    font-size: 2rem;
+    border-radius: 5rem;
+    
+}
+
+header .navbar ul li a:hover {
+    background: linear-gradient(var(--purple), var(--black));
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    padding: 0 15rem;
+}
+
+.home h1 {
+    font-size: 4rem;
+    color: #fff;
+}
+
+.home p {
+    font-size: 2rem;
+    color: #ddd;
+    padding: 1rem 0;
+}
+.btn {
+    padding: .7rem 3rem;
+    background: #444;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 2rem;
+    border-radius: 50px; 
+}
+
+
+
+.btn:hover {
+    background: linear-gradient(var(--purple), var(--black));
+}
+
+.aboutme .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.aboutme .row .info {
+    padding: 2rem 1rem;
+    padding-left: 6rem;
+}
+
+.aboutme .row .info h3 {
+    font-size: 2rem;
+    color: var(--purple);
+    padding: 1rem 0;
+    font-weight: normal;
+}
+
+.aboutme .row .info h3 span {
+    color: #ddd;
+    padding: 0 .5rem;
+}
+
+.aboutme .row .counter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.aboutme .row .counter .box {
+    width: 20rem;
+    background-color: #222;
+    text-align: center;
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 0.5rem;
+}
+
+.aboutme .row .counter .box span {
+    font-size: 4rem;
+    color: var(--purple);
+}
+
+.aboutme .row .counter .box h3 {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.heading {
+    color: #fff;
+    text-align: center;
+    font-size: 4rem;
+    padding: 1rem;
+}
+
+.heading span {
+    color: var(--purple);
+}
+
+.skills .skills-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+}
+
+.skills .skill-category {
+    width: 30%;
+    margin: 1rem 0;
+}
+
+.skills .skill-category h3 {
+    font-size: 2rem;
+    color: var(--purple);
+    margin-bottom: 1rem;
+}
+
+.skills .skill-category ul {
+    padding: 0;
+    list-style: square;
+}
+
+.skills .skill-category ul li {
+    font-size: 1.4rem;
+    color: #ddd;
+    margin: 0.5rem 0;
+}
+
+.experience .experience-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.experience .job {
+    width: 70%;
+    background-color: #222;
+    padding: 2rem;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.experience .job h3 {
+    font-size: 2rem;
+    color: var(--purple);
+    margin-bottom: 1rem;
+}
+
+.experience .job span {
+    font-size: 1.4rem;
+    color: #ddd;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.experience .job h2 {
+    font-size: 1.4rem;
+    color: #ddd;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.education .education-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.education .education-item {
+    width: 70%;
+    background-color: #222;
+    padding: 2rem;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.education .education-item h3 {
+    font-size: 2rem;
+    color: var(--purple);
+    margin-bottom: 1rem;
+}
+
+.education .education-item span {
+    font-size: 1.4rem;
+    color: #ddd;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.contact .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.contact .info {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact .info h3 {
+    font-size: 2rem;
+    color: #ddd;
+    margin-bottom: 1rem;
+}
+
+.contact form {
+    width: 70%;
+    text-align: center;
+}
+
+.contact form .box {
+    padding: 1.5rem;
+    margin: 1rem 0;
+    background-color: #45454533;
+    text-transform: none;
+    font-size: 1.7rem;
+    width: 100%;
+}
+
+.contact form .box::placeholder {
+    text-align: center;
+}
+
+.contact form .message {
+    height: 15rem;
+    resize: none;
+}
+
+.blog .blog-posts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.blog .blog-posts .post {
+    width: 70%;
+    background-color: #222;
+    padding: 2rem;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.blog .blog-posts .post h3 {
+    font-size: 2rem;
+    color: var(--purple);
+    margin-bottom: 1rem;
+}
+
+.blog .blog-posts .post p {
+    font-size: 1.4rem;
+    color: #ddd;
+}
+
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="user">
+            <div class="imgdiv">
+                <img src="https://imageio.forbes.com/specials-images/imageserve/5f6a779460548326baf6d730//960x0.jpg?format=jpg&width=960" alt="userImage">
+            </div>
+            <h1 class="name">Greta</h>
+            <p class="post">Full Stack Developer</p>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#aboutme">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#blog">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <h1>Hi Everyone!</h1>
+        <p>Hi, I'm <b>Greta</b>, a passionate and dedicated full stack developer with a knack for turning complex problems into elegant, user-friendly solutions. Over the past five years, I've honed my skills in both front-end and back-end development, allowing me to bring a holistic approach to every project I undertake.</p>
+    </section>
+
+    <section id="aboutme" class="aboutme">
+        <h1 class="heading">About</h1>
+        <div class="row">
+            <div class="info">
+                <h3><span>Name:</span> Greta</h3>
+                <h3><span>Age:</span> 29</h3>
+                <h3><span>Qualification:</span> B.E in CSE</h3>
+                <h3><span>Role:</span> Full Stack Developer</h3>
+                <h3><span>Place:</span> Amsterdam</h3>
+            </div>
+            <div class="counter">
+                <div class="box">
+                    <span>5+</span>
+                    <h3>Years of Experience</h3>
+                </div>
+                <div class="box">
+                    <span>50+ </span>
+                    <h3>Completed Projects</h3>
+                </div>
+                <div class="box">
+                    <span>10+ Tech Events</span>
+                    <h3>Keynote Speaker</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <h1 class="heading">Skills</h1>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Front-End Development</h3>
+                <ul>
+                    <li>JavaScript </li><li> HTML5<li>CSS3</li><li>React</li><li>Angular</li>
+                    <li>Responsive Design</li><li> User Experience Principles</li>
+                    <li>Webpack</li><li>Babel</li><li> Git</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Back-End Development</h3>
+                <ul>
+                    <li>Node.js </li>
+                      <li>  Express</li>
+                         <li>Python</li>
+                          <li>Django</li>
+                    <li>MySQL, PostgreSQL, MongoDB</li>
+                    <li>RESTful APIs</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Other Technical Skills</h3>
+                <ul style-type:>
+                    <li>Git </li><li> Docker</ul><li> AWS</li>
+                    <li>Agile</li>
+                        <li> Scrum</li> <li>Test-Driven Development (TDD)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <h1 class="heading">Experience</h1>
+        <div class="experience-container">
+            <div class="job">
+                <h3>Full Stack Developer at Google</h3>
+                <span>2020 - Present</span>
+                <h2>Developing and maintaining web applications using modern technologies.Collaborating with cross-functional teams to design and implement new features.Ensuring high performance and responsiveness of applications.</h2>
+            </div>
+            <div class="job">
+                <h3>Full Stack Developer at Amazon</h3>
+                <span>2019 - 2021</span>
+                <h2>Worked on back-end services and front-end interfaces for various web applications. Participated in code reviews and provided mentorship to junior developers. Implemented best practices for code quality, security, and performance.</h2>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="education">
+        <h1 class="heading">Education</h1>
+        <div class="education-container">
+            <div class="education-item">
+                <h3>Bachelor's Degree in Computer Science</h3>
+                <span>Hardvard University , 2016</span>
+            </div>
+            <div class="education-item">
+                <h3>Full Stack Web Development Certification</h3>
+                <span>Coursera, 2019</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h1 class="heading">Contact Me</h1>
+        <div class="contact-container">
+            <div class="info">
+                <h3>Email: greta@example.com</h3>
+                <h3>Phone: +89765 43410</h3>
+                <h3>Address: North Sunrise Street, Amsterdam, Australia</h3>
+            </div>
+            <form action="">
+                <input type="text" placeholder="Enter Name" class="box" required>
+                <input type="email" placeholder="Enter Email" class="box" required>
+                <input type="number" placeholder="Contact Details" class="box" required>
+                <textarea cols="30" rows="10" placeholder="Enter Message" class="box message" required></textarea>
+                <button type="submit" class="btn">Send 📩</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="blog" class="blog">
+        <h1 class="heading">Blog</h1>
+        <div class="blog-posts">
+            <div class="post">
+                <h3>The Future of Web Development</h3>
+                <p>Exploring the latest trends and technologies shaping the web development landscape.</p>
+            </div>
+            <div class="post">
+                <h3>JavaScript Frameworks: A Comparison</h3>
+                <p>An in-depth comparison of popular JavaScript frameworks and their use cases.</p>
+            </div>
+            <div class="post">
+                <h3>Building Scalable Web Applications</h3>
+                <p>Best practices for designing and implementing scalable web applications.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
