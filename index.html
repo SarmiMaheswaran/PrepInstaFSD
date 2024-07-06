@@ -3,352 +3,325 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greta's Portfolio</title>
+    <title>Portfolio</title>
     <style>
-:root {
-    --purple: #800080;
-    --black : #000000;
-}
-
+        /* Reset styles for a base layout */
 * {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    outline: none;
-    border: none;
-    text-transform: capitalize;
-    transition: all .2s linear;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Body styles */
 body {
-    background-color: var(--black);
-    padding-left: 35rem;
-    overflow-x: hidden;
+  font-family: sans-serif;
+  background-color: rgb(255, 240, 245);
+  display:inline;
+  flex-direction:column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
-html {
-    font-size: 62%;
-    overflow-x: hidden;
+/* Header styles */
+header#header {
+  background-color: #fff;
+  padding: 20px;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
+ .user { 
+  
+  display: inline;
+  align-items: center;
+ }
+
+
+.imgdiv {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.imgdiv img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 24px;
+}
+
+.post {
+  color: #888;
+  font-size: 16px;
+}
+
+.navbar {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #000;
+}
+
+/* Section styles */
 section {
-    min-height: 100vh;
+  padding: 50px 20px;
+  text-align: center;
 }
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    height: 100%;
-    width: 35rem;
-    background-color: #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: column;
-    text-align: center;
+section h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 
-header .user .imgdiv img {
-    height: 21rem;
-    width: 17rem;
-    margin-bottom: .4rem;
-    object-fit: cover;
-    border-radius: 50%; /* Make the image round */
+section p {
+  font-size: 18px;
+  line-height: 1.5;
 }
 
-
-header .user .name {
-    font-size: 3.5rem;
-    color:white;
+/* About Me section styles */
+#aboutme .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-header .user .post {
-    font-size: 2rem;
-    color: purple;
+#aboutme .info {
+  flex-basis: 40%;
+  text-align: left;
 }
 
-header .navbar {
-    width: 100%;
+#aboutme .info h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #333;
 }
 
-header .navbar ul {
-    list-style: none;
-    padding: 1rem 3rem;
-    
+#aboutme .info h3 span {
+  color: #888;
+  font-weight: normal;
 }
 
-header .navbar ul li a {
-    display: block;
-    padding: 1rem;
-    margin: 1.5rem 0;
-    background: #444;
-    color: #fff;
-    font-size: 2rem;
-    border-radius: 5rem;
-    
+#aboutme .counter {
+  flex-basis: 60%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-header .navbar ul li a:hover {
-    background: linear-gradient(var(--purple), var(--black));
+#aboutme .counter .box {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color:whitesmoke;
 }
 
-.home {
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    padding: 0 15rem;
+#aboutme .counter .box h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
 }
 
-.home h1 {
-    font-size: 4rem;
-    color: #fff;
+#aboutme .counter .box span {
+  font-size: 30px;
+  color: #333;
+  font-weight: bold;
 }
 
-.home p {
-    font-size: 2rem;
-    color: #ddd;
-    padding: 1rem 0;
-}
-.btn {
-    padding: .7rem 3rem;
-    background: #444;
-    color: #fff;
-    cursor: pointer;
-    margin-top: 1rem;
-    font-size: 2rem;
-    border-radius: 50px; 
+/* Skills section styles */
+#skills .skills-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-
-
-.btn:hover {
-    background: linear-gradient(var(--purple), var(--black));
+#skills .skill-category {
+  flex-basis: 30%;
+  text-align: left;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
 }
 
-.aboutme .row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem 0;
+#skills .skill-category h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
 }
 
-.aboutme .row .info {
-    padding: 2rem 1rem;
-    padding-left: 6rem;
+#skills .skill-category ul {
+  list-style-type: style square;
+  padding: 0;
 }
 
-.aboutme .row .info h3 {
-    font-size: 2rem;
-    color: var(--purple);
-    padding: 1rem 0;
-    font-weight: normal;
+#skills .skill-category li {
+  margin-bottom: 5px;
 }
 
-.aboutme .row .info h3 span {
-    color: #ddd;
-    padding: 0 .5rem;
+/* Experience section styles */
+#experience .experience-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.aboutme .row .counter {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+#experience .job {
+  text-align: left;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
 }
 
-.aboutme .row .counter .box {
-    width: 20rem;
-    background-color: #222;
-    text-align: center;
-    padding: 2rem;
-    margin: 2rem;
-    border-radius: 0.5rem;
+#experience .job h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
 }
 
-.aboutme .row .counter .box span {
-    font-size: 4rem;
-    color: var(--purple);
+#experience .job span {
+  font-size: 14px;
+  color: #888;
 }
 
-.aboutme .row .counter .box h3 {
-    font-size: 2rem;
-    color: #fff;
+#experience .job p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 10px;
 }
 
-.heading {
-    color: #fff;
-    text-align: center;
-    font-size: 4rem;
-    padding: 1rem;
+/* Education section styles */
+#education .education-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.heading span {
-    color: var(--purple);
+#education .education-item {
+  flex-basis: 40%;
+  text-align: left;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
 }
 
-.skills .skills-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 2rem 0;
+#education .education-item h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
 }
 
-.skills .skill-category {
-    width: 30%;
-    margin: 1rem 0;
+#education .education-item span {
+  font-size: 16px;
+  color: #333;
 }
 
-.skills .skill-category h3 {
-    font-size: 2rem;
-    color: var(--purple);
-    margin-bottom: 1rem;
+/* Contact section styles */
+#contact .contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.skills .skill-category ul {
-    padding: 0;
-    list-style: square;
+#contact .info {
+  flex-basis: 40%;
+  text-align: left;
 }
 
-.skills .skill-category ul li {
-    font-size: 1.4rem;
-    color: #ddd;
-    margin: 0.5rem 0;
+#contact .info h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
 }
 
-.experience .experience-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 0;
+#contact .info p {
+  margin-bottom: 10px;
+  color: #888;
 }
 
-.experience .job {
-    width: 70%;
-    background-color: #222;
-    padding: 2rem;
-    margin: 1rem 0;
-    border-radius: 0.5rem;
-    text-align: center;
+#contact form {
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
 }
 
-.experience .job h3 {
-    font-size: 2rem;
-    color: var(--purple);
-    margin-bottom: 1rem;
+#contact input,
+#contact textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
 }
 
-.experience .job span {
-    font-size: 1.4rem;
-    color: #ddd;
-    display: block;
-    margin-bottom: 1rem;
+#contact .box {
+  width: 100%;
 }
 
-.experience .job h2 {
-    font-size: 1.4rem;
-    color: #ddd;
-    display: block;
-    margin-bottom: 1rem;
+#contact .message {
+  height: 100px;
 }
 
-.education .education-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 0;
+#contact button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
 }
 
-.education .education-item {
-    width: 70%;
-    background-color: #222;
-    padding: 2rem;
-    margin: 1rem 0;
-    border-radius: 0.5rem;
-    text-align: center;
+#contact button:hover {
+  background-color: #555;
 }
 
-.education .education-item h3 {
-    font-size: 2rem;
-    color: var(--purple);
-    margin-bottom: 1rem;
+/* Blog section styles */
+#blog .blog-posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-.education .education-item span {
-    font-size: 1.4rem;
-    color: #ddd;
-    display: block;
-    margin-bottom: 1rem;
+#blog .post {
+  flex-basis: 30%;
+  text-align: left;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
 }
 
-.contact .contact-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 0;
+#blog .post h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
 }
 
-.contact .info {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.contact .info h3 {
-    font-size: 2rem;
-    color: #ddd;
-    margin-bottom: 1rem;
-}
-
-.contact form {
-    width: 70%;
-    text-align: center;
-}
-
-.contact form .box {
-    padding: 1.5rem;
-    margin: 1rem 0;
-    background-color: #45454533;
-    text-transform: none;
-    font-size: 1.7rem;
-    width: 100%;
-}
-
-.contact form .box::placeholder {
-    text-align: center;
-}
-
-.contact form .message {
-    height: 15rem;
-    resize: none;
-}
-
-.blog .blog-posts {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 0;
-}
-
-.blog .blog-posts .post {
-    width: 70%;
-    background-color: #222;
-    padding: 2rem;
-    margin: 1rem 0;
-    border-radius: 0.5rem;
-    text-align: center;
-}
-
-.blog .blog-posts .post h3 {
-    font-size: 2rem;
-    color: var(--purple);
-    margin-bottom: 1rem;
-}
-
-.blog .blog-posts .post p {
-    font-size: 1.4rem;
-    color: #ddd;
+#blog .post p {
+  font-size: 16px;
+  line-height: 1.5;
 }
 
     </style>
@@ -357,21 +330,21 @@ header .navbar ul li a:hover {
     <header id="header">
         <div class="user">
             <div class="imgdiv">
-                <img src="https://imageio.forbes.com/specials-images/imageserve/5f6a779460548326baf6d730//960x0.jpg?format=jpg&width=960" alt="userImage">
+               <img src="https://imageio.forbes.com/specials-images/imageserve/5f6a779460548326baf6d730//960x0.jpg?format=jpg&width=960" alt="userImage">
             </div>
-            <h1 class="name">Greta</h>
-            <p class="post">Full Stack Developer</p>
+            <div>
+                <h1 class="name">Greta</h1>
+                <p class="post">Full Stack Developer</p>
+            </div>
         </div>
         <nav class="navbar">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#aboutme">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#blog">Blog</a></li>
-            </ul>
+            <a href="#home">Home</a>
+            <a href="#aboutme">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+            <a href="#blog">Blog</a>
         </nav>
     </header>
 
@@ -413,28 +386,40 @@ header .navbar ul li a:hover {
             <div class="skill-category">
                 <h3>Front-End Development</h3>
                 <ul>
-                    <li>JavaScript </li><li> HTML5<li>CSS3</li><li>React</li><li>Angular</li>
-                    <li>Responsive Design</li><li> User Experience Principles</li>
-                    <li>Webpack</li><li>Babel</li><li> Git</li>
+                    <li>JavaScript</li>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>React</li>
+                    <li>Angular</li>
+                    <li>Responsive Design</li>
+                    <li>User Experience Principles</li>
+                    <li>Webpack</li>
+                    <li>Babel</li>
+                    <li>Git</li>
                 </ul>
             </div>
             <div class="skill-category">
                 <h3>Back-End Development</h3>
                 <ul>
-                    <li>Node.js </li>
-                      <li>  Express</li>
-                         <li>Python</li>
-                          <li>Django</li>
-                    <li>MySQL, PostgreSQL, MongoDB</li>
+                    <li>Node.js</li>
+                    <li>Express</li>
+                    <li>Python</li>
+                    <li>Django</li>
+                    <li>MySQL</li>
+                    <li>PostgreSQL</li>
+                    <li>MongoDB</li>
                     <li>RESTful APIs</li>
                 </ul>
             </div>
             <div class="skill-category">
                 <h3>Other Technical Skills</h3>
-                <ul style-type:>
-                    <li>Git </li><li> Docker</ul><li> AWS</li>
+                <ul>
+                    <li>Git</li>
+                    <li>Docker</li>
+                    <li>AWS</li>
                     <li>Agile</li>
-                        <li> Scrum</li> <li>Test-Driven Development (TDD)</li>
+                    <li>Scrum</li>
+                    <li>Test-Driven Development (TDD)</li>
                 </ul>
             </div>
         </div>
@@ -446,12 +431,12 @@ header .navbar ul li a:hover {
             <div class="job">
                 <h3>Full Stack Developer at Google</h3>
                 <span>2020 - Present</span>
-                <h2>Developing and maintaining web applications using modern technologies.Collaborating with cross-functional teams to design and implement new features.Ensuring high performance and responsiveness of applications.</h2>
+                <p>Developing and maintaining web applications using modern technologies.Collaborating with cross-functional teams to design and implement new features.Ensuring high performance and responsiveness of applications.</p>
             </div>
             <div class="job">
                 <h3>Full Stack Developer at Amazon</h3>
                 <span>2019 - 2021</span>
-                <h2>Worked on back-end services and front-end interfaces for various web applications. Participated in code reviews and provided mentorship to junior developers. Implemented best practices for code quality, security, and performance.</h2>
+                <p>Worked on back-end services and front-end interfaces for various web applications. Participated in code reviews and provided mentorship to junior developers. Implemented best practices for code quality, security, and performance.</p>
             </div>
         </div>
     </section>
@@ -461,7 +446,7 @@ header .navbar ul li a:hover {
         <div class="education-container">
             <div class="education-item">
                 <h3>Bachelor's Degree in Computer Science</h3>
-                <span>Hardvard University , 2016</span>
+                <span>Harvard University, 2016</span>
             </div>
             <div class="education-item">
                 <h3>Full Stack Web Development Certification</h3>
